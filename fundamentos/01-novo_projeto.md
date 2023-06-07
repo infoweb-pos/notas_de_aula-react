@@ -26,6 +26,24 @@
 5. Informar nome do projeto
 6. Informar o framework e linaguagem utilizada, react e typescript respectivamente
 
+**exemplo do terminal de comandos**
+```console
+$ npm create vite@latest
+✔ Project name: … fundamentos-01-novo
+✔ Select a framework: › React
+✔ Select a variant: › TypeScript
+
+Scaffolding project in /home/minora/src/2023-pos/notas_de_aulas/fundamentos-01-novo...
+
+Done. Now run:
+
+  cd fundamentos-01-novo
+  npm install
+  npm run dev
+
+$
+```
+
 ### 2. Executar o aplicativo web
 Ainda no terminal, executar os comandos que o script `vite` recomenda
 1. `cd nome_do_projeto`
@@ -38,6 +56,29 @@ Ainda no terminal, executar os comandos que o script `vite` recomenda
    - executa o aplicativo `npm` com a opção `run` que executa um script definido no arquivo `package.json`
    - o script neste comando é o `dev` que executa a aplicação web react em modo desenvolvimento
    - se tudo estiver correto, ao final da execução o script `dev` informa o endereço de acesso da aplicação web react
+
+**exemplo do terminal de comandos**
+```console
+$ cd fundamentos-01-novo/
+
+[fundamentos-01-novo]$ npm i
+
+added 209 packages, and audited 210 packages in 35s
+
+39 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+[fundamentos-01-novo]$ npm run dev
+
+  VITE v4.3.9  ready in 400 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h to show help
+
+```
 
 ### 3. Testar o aplicativo no navegador
 1. a partir do terminal de comando, clicar com o botão direito no endereço informado pelo script `dev` e pedir para abrir o link
