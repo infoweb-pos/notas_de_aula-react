@@ -1,4 +1,6 @@
-# Fundamentos - Criar um novo
+# Criar um projeto novo, executar e ver resultado no navegador
+- **Tema**: Fundamentos de React
+- **Subtema**: Fundamentos - Criar um novo projeto
 
 ## Objetivos
 - Criar um novo projeto javascript para uma aplicação web react usando o script vite
