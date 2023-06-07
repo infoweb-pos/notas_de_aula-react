@@ -8,7 +8,7 @@
 ## Sumário
 
 1. Fundamentos básicos
-   1. Criar um projeto novo, executar e ver resultado no navegador
+   1. [Criar um projeto novo, executar e ver resultado no navegador](fundamentos/01-novo_projeto.md)
    2. Adicionar controle de versão com git num projeto
    3. Criar um componente react com propriedade e usar no aplicativo
    4. Mostrar dados (conteúdo dinâmico) no aplicativo
