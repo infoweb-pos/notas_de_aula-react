@@ -14,4 +14,5 @@
    4. Mostrar dados (conteúdo dinâmico) no aplicativo
    5. Passar uma função para ser executada em um componente react
    6. Adicionar um estado a um componente react
+   7. [Compartilhando estado entre componentes com _elevação de estado_ (lifiting state)](fundamentos/07-elevacao_de_estado.md)
 6. Colocando estilos
