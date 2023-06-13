@@ -11,7 +11,7 @@
 3. [Personalizar o título de MeuBotao](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado.md#3-personalizar-o-t%C3%ADtulo-de-meubotao)
 4. [Adicionar contador ao MeuBotao como estado](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado.md#4-adicionar-contador-ao-meubotao-como-estado)
 5. [Elevar o estado contador de MeuBotao para o Aplicativo](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado.md#5-elevar-o-estado-contador-de-meubotao-para-o-aplicativo)
-6. 
+6. [Incrementar o contador do componente App](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado.md#6-incrementar-o-contador-do-componente-app)
 
 ### 1. Criar o projeto e limpar o código
 
