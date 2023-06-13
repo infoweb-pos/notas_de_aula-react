@@ -6,6 +6,12 @@
 - Criar componentes que compartilham estado do componente pai
 
 ## Sumário
+1. [Criar o projeto e limpar o código](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado.md#1-criar-o-projeto-e-limpar-o-c%C3%B3digo)
+2. [Criar o componente MeuBotao e adicionar 3 instâncias no Aplicativo](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado.md#2-criar-o-componente-meubotao-e-adicionar-3-inst%C3%A2ncias-no-aplicativo)
+3. [Personalizar o título de MeuBotao](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado.md#3-personalizar-o-t%C3%ADtulo-de-meubotao)
+4. [Adicionar contador ao MeuBotao como estado](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado.md#4-adicionar-contador-ao-meubotao-como-estado)
+5. [Elevar o estado contador de MeuBotao para o Aplicativo](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado.md#5-elevar-o-estado-contador-de-meubotao-para-o-aplicativo)
+6. 
 
 ### 1. Criar o projeto e limpar o código
 
@@ -190,9 +196,52 @@ export default App;
 1. Adicionar o estado `contador` ao componente `App`
 2. Adicionar a propriedade `contador={contador}` nas instâncias de MeuBotao em `App`
 3. Adicionar `props.contador` no título de `button` no componente MeuBotao
-4. Criar uma constante com a função de incrementar contador de `App`, `contarEmApp`
-5. Adicionar `contar={contarEmApp}` nas instâncias de MeuBotao em `App`
-6. Adicionar `props.contar` no evento `onMouseMove` em `button` no componente MeuBotao
+
+**arquivo** `src/App.tsx`
+```javascript
+import { useState } from "react";
+import "./App.css";
+
+const MeuBotao = (props: any) => {
+	const [contador, setContador] = useState(0);
+	const tratarOnClick = () => setContador(contador + 1);
+
+	return (
+		<button onClick={tratarOnClick}>
+			{props.titulo} {contador} ({props.contador})
+		</button>
+	);
+};
+
+const App = () => {
+	const [contador, setContador] = useState(0);
+
+	return (
+		<>
+			<h1>Aplicativo exemplo de elevação de estado</h1>
+			<MeuBotao
+				titulo={"Contador de bom dia"}
+				contador={contador}
+			/>
+			<MeuBotao
+				titulo={"Contador de boa tarde"}
+				contador={contador}
+			/>
+			<MeuBotao
+				titulo={"Contador de boa noite"}
+				contador={contador}
+			/>
+		</>
+	);
+};
+
+export default App;
+```
+
+### 6. Incrementar o contador do componente App
+1. Criar uma constante com a função de incrementar contador de `App`, `contarEmApp`
+2. Adicionar `contar={contarEmApp}` nas instâncias de MeuBotao em `App`
+3. Adicionar `props.contar` no evento `onMouseMove` em `button` no componente MeuBotao
 
 **arquivo** `src/App.tsx`
 ```javascript
@@ -238,6 +287,7 @@ const App = () => {
 
 export default App;
 ```
+
 
 ## Links
 - React
