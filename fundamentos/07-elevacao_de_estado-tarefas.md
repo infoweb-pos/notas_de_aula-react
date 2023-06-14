@@ -13,13 +13,13 @@ uma entrada de texto e uma lista de itens.
 Todos encapsulados por componentes React da aplicação.
 
 ## Sumário
-1. [Criar o projeto e limpar o código](https://github.com/infoweb-pos/react-notas_de_aula/edit/main/fundamentos/07-elevacao_de_estado-tarefas.md#1-criar-o-projeto-e-limpar-o-c%C3%B3digo)
-2. [Criar o componente `AppNavBar` com o título da aplicação e adicionar instância em `App`](https://github.com/infoweb-pos/react-notas_de_aula/edit/main/fundamentos/07-elevacao_de_estado-tarefas.md#2-criar-o-componente-appnavbar-com-o-t%C3%ADtulo-da-aplica%C3%A7%C3%A3o-e-adicionar-inst%C3%A2ncia-em-app)
-3. [Criar o componente `AppTarefaEditar` com o título da aplicação e adicionar instância em `App`](https://github.com/infoweb-pos/react-notas_de_aula/edit/main/fundamentos/07-elevacao_de_estado-tarefas.md#3-criar-o-componente-apptarefaeditar-com-o-t%C3%ADtulo-da-aplica%C3%A7%C3%A3o-e-adicionar-inst%C3%A2ncia-em-app)
-4. [Criar o componente `AppTarefaLista` com o título da aplicação e adicionar instância em `App`](https://github.com/infoweb-pos/react-notas_de_aula/edit/main/fundamentos/07-elevacao_de_estado-tarefas.md#4-criar-o-componente-apptarefalista-com-o-t%C3%ADtulo-da-aplica%C3%A7%C3%A3o-e-adicionar-inst%C3%A2ncia-em-app)
-5. [Transferir os dados do HTML do componente `AppTarefaLista` para variáveis](https://github.com/infoweb-pos/react-notas_de_aula/edit/main/fundamentos/07-elevacao_de_estado-tarefas.md#5-transferir-os-dados-do-html-do-componente-apptarefalista-para-vari%C3%A1veis)
-6. [Criar estado para o componente `AppTarefaEditar` com valor inicial](https://github.com/infoweb-pos/react-notas_de_aula/edit/main/fundamentos/07-elevacao_de_estado-tarefas.md#6-criar-estado-para-o-componente-apptarefaeditar-com-valor-inicial)
-7. [Criar estado para o componente `AppTarefaLista` com valor inicial](https://github.com/infoweb-pos/react-notas_de_aula/edit/main/fundamentos/07-elevacao_de_estado-tarefas.md#7-criar-estado-para-o-componente-apptarefalista-com-valor-inicial)
+1. [Criar o projeto e limpar o código](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado-tarefas.md#1-criar-o-projeto-e-limpar-o-c%C3%B3digo)
+2. [Criar o componente `AppNavBar` com o título da aplicação e adicionar instância em `App`](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado-tarefas.md#2-criar-o-componente-meubotao-e-adicionar-3-inst%C3%A2ncias-no-aplicativo)
+3. [Criar o componente `AppTarefaEditar` com o título da aplicação e adicionar instância em `App`](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado-tarefas.md#3-criar-o-componente-apptarefaeditar-com-o-t%C3%ADtulo-da-aplica%C3%A7%C3%A3o-e-adicionar-inst%C3%A2ncia-em-app)
+4. [Criar o componente `AppTarefaLista` com o título da aplicação e adicionar instância em `App`](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado-tarefas.md#4-criar-o-componente-apptarefalista-com-o-t%C3%ADtulo-da-aplica%C3%A7%C3%A3o-e-adicionar-inst%C3%A2ncia-em-app)
+5. [Transferir os dados do HTML do componente `AppTarefaLista` para variáveis](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado-tarefas.md#5-transferir-os-dados-do-html-do-componente-apptarefalista-para-vari%C3%A1veis)
+6. [Criar estado para o componente `AppTarefaEditar` com valor inicial](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado-tarefas.md#6-criar-estado-para-o-componente-apptarefaeditar-com-valor-inicial)
+7. [Criar estado para o componente `AppTarefaLista` com valor inicial](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado-tarefas.md#7-criar-estado-para-o-componente-apptarefalista-com-valor-inicial)
 8. continuará
 
 ### 1. Criar o projeto e limpar o código
