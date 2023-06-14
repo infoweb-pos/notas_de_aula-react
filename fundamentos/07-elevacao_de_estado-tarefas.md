@@ -13,15 +13,16 @@ uma entrada de texto e uma lista de itens.
 Todos encapsulados por componentes React da aplicação.
 
 ## Sumário
-1. Criar o projeto e limpar o código
-2. Criar o componente MeuBotao e adicionar 3 instâncias no Aplicativo
-3. Personalizar o título de MeuBotao
-4. Adicionar contador ao MeuBotao como estado
-5. Elevar o estado contador de MeuBotao para o Aplicativo
-6. Incrementar o contador do componente App
+1. [Criar o projeto e limpar o código](https://github.com/infoweb-pos/react-notas_de_aula/edit/main/fundamentos/07-elevacao_de_estado-tarefas.md#1-criar-o-projeto-e-limpar-o-c%C3%B3digo)
+2. [Criar o componente `AppNavBar` com o título da aplicação e adicionar instância em `App`](https://github.com/infoweb-pos/react-notas_de_aula/edit/main/fundamentos/07-elevacao_de_estado-tarefas.md#2-criar-o-componente-appnavbar-com-o-t%C3%ADtulo-da-aplica%C3%A7%C3%A3o-e-adicionar-inst%C3%A2ncia-em-app)
+3. [Criar o componente `AppTarefaEditar` com o título da aplicação e adicionar instância em `App`](https://github.com/infoweb-pos/react-notas_de_aula/edit/main/fundamentos/07-elevacao_de_estado-tarefas.md#3-criar-o-componente-apptarefaeditar-com-o-t%C3%ADtulo-da-aplica%C3%A7%C3%A3o-e-adicionar-inst%C3%A2ncia-em-app)
+4. [Criar o componente `AppTarefaLista` com o título da aplicação e adicionar instância em `App`](https://github.com/infoweb-pos/react-notas_de_aula/edit/main/fundamentos/07-elevacao_de_estado-tarefas.md#4-criar-o-componente-apptarefalista-com-o-t%C3%ADtulo-da-aplica%C3%A7%C3%A3o-e-adicionar-inst%C3%A2ncia-em-app)
+5. [Transferir os dados do HTML do componente `AppTarefaLista` para variáveis](https://github.com/infoweb-pos/react-notas_de_aula/edit/main/fundamentos/07-elevacao_de_estado-tarefas.md#5-transferir-os-dados-do-html-do-componente-apptarefalista-para-vari%C3%A1veis)
+6. [Criar estado para o componente `AppTarefaEditar` com valor inicial](https://github.com/infoweb-pos/react-notas_de_aula/edit/main/fundamentos/07-elevacao_de_estado-tarefas.md#6-criar-estado-para-o-componente-apptarefaeditar-com-valor-inicial)
+7. [Criar estado para o componente `AppTarefaLista` com valor inicial](https://github.com/infoweb-pos/react-notas_de_aula/edit/main/fundamentos/07-elevacao_de_estado-tarefas.md#7-criar-estado-para-o-componente-apptarefalista-com-valor-inicial)
+8. continuará
 
 ### 1. Criar o projeto e limpar o código
-
 1. Abrir o terninal de comandos
 2. Criar projeto novo com React e TypeScript
 3. Entrar no diretório do projeto, instalar bibliotecas e executar aplicativo
@@ -32,21 +33,21 @@ Todos encapsulados por componentes React da aplicação.
 **terminal de comandos**
 ```console
 $ npm create vite@latest
-✔ Project name: … 07-01-elevacao_de_estado-contador
+✔ Project name: … 07-02-elevacao_de_estado-tarefas
 ✔ Select a framework: › React
 ✔ Select a variant: › TypeScript
 
-Scaffolding project in /home/minora/minora/2023-pos/07-01-elevacao_de_estado-contador...
+Scaffolding project in /home/minora/minora/2023-pos/07-02-elevacao_de_estado-tarefas...
 
 Done. Now run:
 
-  cd 07-01-elevacao_de_estado-contador
+  cd 07-02-elevacao_de_estado-tarefas
   npm install
   npm run dev
 
-$ cd 07-01-elevacao_de_estado-contador
+$ cd 07-02-elevacao_de_estado-tarefas
 
-[07-01-elevacao_de_estado-contador] $ npm install
+[07-02-elevacao_de_estado-tarefas] $ npm install
 added 209 packages, and audited 210 packages in 15s
 
 39 packages are looking for funding
@@ -54,7 +55,7 @@ added 209 packages, and audited 210 packages in 15s
 
 found 0 vulnerabilities
 
-[07-01-elevacao_de_estado-contador] $ npm run dev
+[07-02-elevacao_de_estado-tarefas] $ npm run dev
  VITE v4.3.9  ready in 400 ms
 
   ➜  Local:   http://localhost:5173/
@@ -67,66 +68,346 @@ found 0 vulnerabilities
 ```javascript
 import './App.css'
 
-function App() {
+const App = () => {
 
   return (
     <>
-      <h1>Aplicativo exemplo de elevação de estado</h1>
     </>
   )
 }
 
 export default App
+
 ```
 
-### 2. Criar o componente MeuBotao e adicionar 3 instâncias no Aplicativo
-1. Criar o componente MeuBotao com um `button` html com um texto padrão
-2. Adicionar 3 instâncias do componente MeuBotao no componente App
+### 2. Criar o componente `AppNavBar` com o título da aplicação e adicionar instância em `App`
+1. Criar uma constante para o componente `AppNavBar`
+2. Adicioanar uma instância do componente `AppNavBar` em `App`
 
 **arquivo** `src/App.tsx`
 ```javascript
+import "./App.css";
+
+const AppNavBar = () => {
+	return (
+		<div className="card">
+			<h1>Lista de tarefas</h1>
+		</div>
+	);
+};
+
+const App = () => {
+	return (
+		<>
+			<AppNavBar />
+		</>
+	);
+};
+
+export default App;
 
 ```
 
-### 3. Personalizar o título de MeuBotao
-1. Adicionar a propriedade `titulo` nas instâncias de MeuBotao
-2. Adicionar `props: any` no componente MeuBotao
-3. Substituir a string fixa `Meu componente botão` de button por `{props.titulo}`
+### 3. Criar o componente `AppTarefaEditar` com o título da aplicação e adicionar instância em `App`
+1. Criar uma constante para o componente `AppTarefaEditar`
+2. Adicioanar uma instância do componente `AppTarefaEditar` em `App`
 
 **arquivo** `src/App.tsx`
 ```javascript
+import "./App.css";
+
+const AppNavBar = () => {
+	return (
+		<div className="card">
+			<h1>Lista de tarefas</h1>
+		</div>
+	);
+};
+
+const AppTarefaEditar = () => {
+  return (
+    <div className="card">
+      <label>Tarefa: </label>
+      <input type="text" />
+      <button>Adicionar</button>
+    </div>
+  );
+}
+
+const App = () => {
+	return (
+		<>
+			<AppNavBar />
+      <AppTarefaEditar />
+		</>
+	);
+};
+
+export default App;
 
 ```
 
-### 4. Adicionar contador ao MeuBotao como estado
-1. Adicionar o estado `contador` no componente MeuBotao 
-2. Adicionar uma função anônima no evento `onClick` para incrementar contador
-3. Substituir a função anônima por uma variável constante no evento `onClick`
-
-**arquivo** `src/App.tsx` **1a versão com função anônima para tratar o onClick**
-```javascript
-
-```
-
-**arquivo** `src/App.tsx` **2a versão com substituição da função anônima por uma variável constante no onClick**
-```javascript
-
-```
-
-### 5. Elevar o estado contador de MeuBotao para o Aplicativo
-1. Adicionar o estado `contador` ao componente `App`
-2. Adicionar a propriedade `contador={contador}` nas instâncias de MeuBotao em `App`
-3. Adicionar `props.contador` no título de `button` no componente MeuBotao
+### 4. Criar o componente `AppTarefaLista` com o título da aplicação e adicionar instância em `App`
+1. Criar uma constante para o componente `AppTarefaLista`
+2. Adicioanar uma instância do componente `AppTarefaLista` em `App`
 
 **arquivo** `src/App.tsx`
 ```javascript
+import "./App.css";
+
+const AppNavBar = () => {
+	return (
+		<div className="card">
+			<h1>Lista de tarefas</h1>
+		</div>
+	);
+};
+
+const AppTarefaEditar = () => {
+  return (
+    <div className="card">
+      <label>Tarefa: </label>
+      <input type="text" />
+      <button>Adicionar</button>
+    </div>
+  );
+}
+
+const AppTarefaLista = () => {
+  return (
+    <div className="card">
+      <ul>
+        <li>Prototipar interface do usuário</li>
+        <li>Implementar com HTML a interface com o usário em React</li>
+        <li>Extrair componentes React da implementação HTML</li>
+        <li>Transferir os dados do HTML dos componentes React para variáveis</li>
+        <li>Modificar os dados de variáveis para estado ou propriedades de componentes</li>
+        <li>Elevar os estados dos componentes quando tiver dados compartilhados</li>
+        <li>Programar a modificação dos estados</li>
+      </ul>
+    </div>
+  )
+}
+
+const App = () => {
+	return (
+		<>
+			<AppNavBar />
+      <AppTarefaEditar />
+      <AppTarefaLista />
+		</>
+	);
+};
+
+export default App;
 
 ```
 
-### 6. Incrementar o contador do componente App
-1. Criar uma constante com a função de incrementar contador de `App`, `contarEmApp`
-2. Adicionar `contar={contarEmApp}` nas instâncias de MeuBotao em `App`
-3. Adicionar `props.contar` no evento `onMouseMove` em `button` no componente MeuBotao
+### 5. Transferir os dados do HTML do componente `AppTarefaLista` para variáveis
+1. Criar constante `tarefas`
+2. Transferir os dados do HTML em `li` para strings em `tarefas`
+3. Substituir os `li` do HTML em `tarefas.map`
+
+**arquivo** `src/App.tsx`
+```javascript
+import "./App.css";
+
+const AppNavBar = () => {
+	return (
+		<div className="card">
+			<h1>Lista de tarefas</h1>
+		</div>
+	);
+};
+
+const AppTarefaEditar = () => {
+	return (
+		<div className="card">
+			<label>Tarefa: </label>
+			<input type="text" />
+			<button>Adicionar</button>
+		</div>
+	);
+};
+
+const AppTarefaLista = () => {
+	const tarefas = [
+		"Prototipar interface do usuário",
+		"Implementar com HTML a interface com o usário em React",
+		"Extrair componentes React da implementação HTML",
+		"Transferir os dados do HTML dos componentes React para variáveis",
+		"Modificar os dados de variáveis para estado ou propriedades de componentes",
+		"Elevar os estados dos componentes quando tiver dados compartilhados",
+		"Programar a modificação dos estados",
+	];
+	return (
+		<div className="card">
+			<ul>
+				{tarefas.map((item, index) => (
+					<li key={index}>{item}</li>
+				))}
+			</ul>
+		</div>
+	);
+};
+
+const App = () => {
+	return (
+		<>
+			<AppNavBar />
+			<AppTarefaEditar />
+			<AppTarefaLista />
+		</>
+	);
+};
+
+export default App;
+
+```
+
+### 6. Criar estado para o componente `AppTarefaEditar` com valor inicial
+1. criar o estado `tarefa` no componente `AppTarefaEditar` colocando como valor inicial uma string vazia.
+2. adicionar o estado `tarefa` no `input` do componente `AppTarefaEditar`. obs: você irá digitar e não irá mudar nada na caixa de texto.
+3. adicionar o evento `onChange` no `input` do componente `AppTarefaEditar`.
+
+**arquivo** `src/App.tsx`
+```javascript
+import { useState } from "react";
+import "./App.css";
+
+const AppNavBar = () => {
+	return (
+		<div className="card">
+			<h1>Lista de tarefas</h1>
+		</div>
+	);
+};
+
+const AppTarefaEditar = () => {
+	const [tarefa, setTarefa] = useState("");
+
+	return (
+		<div className="card">
+			<label>Tarefa: </label>
+			<input
+				type="text"
+				value={tarefa}
+				onChange={(e: React.FormEvent<HTMLInputElement>) =>
+					setTarefa(e.target.value)
+				}
+			/>
+			<button>Adicionar</button>
+		</div>
+	);
+};
+
+const AppTarefaLista = () => {
+	const tarefas = [
+		"Prototipar interface do usuário",
+		"Implementar com HTML a interface com o usário em React",
+		"Extrair componentes React da implementação HTML",
+		"Transferir os dados do HTML dos componentes React para variáveis",
+		"Modificar os dados de variáveis para estado ou propriedades de componentes",
+		"Elevar os estados dos componentes quando tiver dados compartilhados",
+		"Programar a modificação dos estados",
+	];
+	return (
+		<div className="card">
+			<ul>
+				{tarefas.map((item, index) => (
+					<li key={index}>{item}</li>
+				))}
+			</ul>
+		</div>
+	);
+};
+
+const App = () => {
+	return (
+		<>
+			<AppNavBar />
+			<AppTarefaEditar />
+			<AppTarefaLista />
+		</>
+	);
+};
+
+export default App;
+
+```
+
+### 7. Criar estado para o componente `AppTarefaLista` com valor inicial
+1. modificar a constante `tarefas` para estado no componente `AppTarefaLista` colocando como valor inicial lista de string.
+
+**arquivo** `src/App.tsx`
+```javascript
+import { useState } from "react";
+import "./App.css";
+
+const AppNavBar = () => {
+	return (
+		<div className="card">
+			<h1>Lista de tarefas</h1>
+		</div>
+	);
+};
+
+const AppTarefaEditar = () => {
+	const [tarefa, setTarefa] = useState("");
+
+	return (
+		<div className="card">
+			<label>Tarefa: </label>
+			<input
+				type="text"
+				value={tarefa}
+				onChange={(e: React.FormEvent<HTMLInputElement>) =>
+					setTarefa(e.target.value)
+				}
+			/>
+			<button>Adicionar</button>
+		</div>
+	);
+};
+
+const AppTarefaLista = () => {
+	const [tarefas, setTarefas] = useState([
+		"Prototipar interface do usuário",
+		"Implementar com HTML a interface com o usário em React",
+		"Extrair componentes React da implementação HTML",
+		"Transferir os dados do HTML dos componentes React para variáveis",
+		"Modificar os dados de variáveis para estado ou propriedades de componentes",
+		"Elevar os estados dos componentes quando tiver dados compartilhados",
+		"Programar a modificação dos estados",
+	]);
+  
+	return (
+		<div className="card">
+			<ul>
+				{tarefas.map((item, index) => (
+					<li key={index}>{item}</li>
+				))}
+			</ul>
+		</div>
+	);
+};
+
+const App = () => {
+	return (
+		<>
+			<AppNavBar />
+			<AppTarefaEditar />
+			<AppTarefaLista />
+		</>
+	);
+};
+
+export default App;
+
+```
+
+### 8. continuará...
+1. 
 
 **arquivo** `src/App.tsx`
 ```javascript
