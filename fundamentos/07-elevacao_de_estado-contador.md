@@ -1,7 +1,7 @@
 # Compartilhando estado entre componentes com elevação de estado (lifiting state)
 - **Tema**: Fundamentos de React
 - **Subtema**: Fundamentos - Compartilhar estado entre componentes com elevação de estado
-- **código-fonte**: [github](https://github.com/infoweb-pos/07-01-elevacao_de_estado-contado) [zip](https://github.com/infoweb-pos/07-01-elevacao_de_estado-contado/archive/refs/tags/2023.zip)
+- **código-fonte**: [github](https://github.com/infoweb-pos/07-01-elevacao_de_estado-contador) [zip](https://github.com/infoweb-pos/07-01-elevacao_de_estado-contador/archive/refs/tags/2023.zip)
 
 ## Objetivos
 - Criar componentes que compartilham estado do componente pai
@@ -18,12 +18,12 @@ com as instâncias de `MeuBotao` além de um contador individual por instância
 de `MeuBotao`.
 
 ## Sumário
-1. [Criar o projeto e limpar o código](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado.md#1-criar-o-projeto-e-limpar-o-c%C3%B3digo)
-2. [Criar o componente MeuBotao e adicionar 3 instâncias no Aplicativo](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado.md#2-criar-o-componente-meubotao-e-adicionar-3-inst%C3%A2ncias-no-aplicativo)
-3. [Personalizar o título de MeuBotao](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado.md#3-personalizar-o-t%C3%ADtulo-de-meubotao)
-4. [Adicionar contador ao MeuBotao como estado](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado.md#4-adicionar-contador-ao-meubotao-como-estado)
-5. [Elevar o estado contador de MeuBotao para o Aplicativo](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado.md#5-elevar-o-estado-contador-de-meubotao-para-o-aplicativo)
-6. [Incrementar o contador do componente App](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado.md#6-incrementar-o-contador-do-componente-app)
+1. [Criar o projeto e limpar o código](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado-contador.md#1-criar-o-projeto-e-limpar-o-c%C3%B3digo)
+2. [Criar o componente MeuBotao e adicionar 3 instâncias no Aplicativo](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado-contador.md#2-criar-o-componente-meubotao-e-adicionar-3-inst%C3%A2ncias-no-aplicativo)
+3. [Personalizar o título de MeuBotao](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado-contador.md#3-personalizar-o-t%C3%ADtulo-de-meubotao)
+4. [Adicionar contador ao MeuBotao como estado](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado-contador.md#4-adicionar-contador-ao-meubotao-como-estado)
+5. [Elevar o estado contador de MeuBotao para o Aplicativo](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado-contador.md#5-elevar-o-estado-contador-de-meubotao-para-o-aplicativo)
+6. [Incrementar o contador do componente App](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado-contador.md#6-incrementar-o-contador-do-componente-app)
 
 ### 1. Criar o projeto e limpar o código
 
