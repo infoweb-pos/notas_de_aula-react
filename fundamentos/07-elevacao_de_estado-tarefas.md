@@ -21,9 +21,9 @@ Todos encapsulados por componentes React da aplicação.
 5. [Transferir os dados do HTML do componente `AppTarefaLista` para variáveis](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado-tarefas.md#5-transferir-os-dados-do-html-do-componente-apptarefalista-para-vari%C3%A1veis)
 6. [Criar estado para o componente `AppTarefaEditar` com valor inicial](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado-tarefas.md#6-criar-estado-para-o-componente-apptarefaeditar-com-valor-inicial)
 7. [Criar estado para o componente `AppTarefaLista` com valor inicial](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado-tarefas.md#7-criar-estado-para-o-componente-apptarefalista-com-valor-inicial)
-8. Elevar o estado do componente `AppTarefaLista` para `App`
-9. Elevar o estado do componente `AppTarefaEditar` para `App`
-10. Criar função para adicionar novas tarefas
+8. [Elevar o estado do componente `AppTarefaLista` para `App`](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado-tarefas.md#8-elevar-o-estado-do-componente-apptarefalista-para-app)
+9. [Elevar o estado do componente `AppTarefaEditar` para `App`](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado-tarefas.md#9-elevar-o-estado-do-componente-apptarefaeditar-para-app)
+10. [Criar função para adicionar novas tarefas](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado-tarefas.md#10-criar-fun%C3%A7%C3%A3o-para-adicionar-novas-tarefas)
 
 ### 1. Criar o projeto e limpar o código
 1. Abrir o terninal de comandos
@@ -555,6 +555,9 @@ export default App;
 ```
 
 ### 10. Criar função para adicionar novas tarefas
+1. Criar a função `tarefaAdicionar` para adicionar o valor do estado `tarefa` na lista do estado `tarefas` em `App`;
+2. Adicionar a propriedade `adicionar` na instância do componente `AppTarefaEditar` em `App`;
+3. Adicionar o evento `onClick={props.adicionar}` no botão em `AppTarefaEditar`.
 
 ```javascript
 import { useState } from "react";
@@ -632,7 +635,7 @@ export default App;
     - [Quick start - Sharing data between components](https://react.dev/learn#sharing-data-between-components)
     - [Sharing State Between Components](https://react.dev/learn/sharing-state-between-components)
   - Aprendendo React
-    - [Elevando o State](https://pt-br.legacy.reactjs.org/docs/lifting-state-up.html)
+    - [Elevando o State](https://pt-br.legacy.reactjs.org/docs/lifting-stahttps://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado-tarefas.md#10-criar-fun%C3%A7%C3%A3o-para-adicionar-novas-tarefaste-up.html)
 - MDN (Mozilla Developer Network) Eventos
   - PT-BR https://developer.mozilla.org/pt-BR/docs/Web/API/Element/click_event
   - EN https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event
