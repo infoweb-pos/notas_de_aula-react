@@ -1,6 +1,7 @@
 # Compartilhando estado entre componentes com elevação de estado (lifiting state) - uma lista de tarefas
 - **Tema**: Fundamentos de React
 - **Subtema**: Fundamentos - Compartilhar estado entre componentes com elevação de estado
+- **código-fonte**: [github](https://github.com/infoweb-pos/07-02-elevacao_de_estado-tarefas) [zip](https://github.com/infoweb-pos/07-02-elevacao_de_estado-tarefas/archive/refs/tags/2023.zip)
 
 ## Objetivos
 - Criar componentes que compartilham estado do componente pai
