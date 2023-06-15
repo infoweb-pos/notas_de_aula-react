@@ -21,7 +21,9 @@ Todos encapsulados por componentes React da aplicação.
 5. [Transferir os dados do HTML do componente `AppTarefaLista` para variáveis](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado-tarefas.md#5-transferir-os-dados-do-html-do-componente-apptarefalista-para-vari%C3%A1veis)
 6. [Criar estado para o componente `AppTarefaEditar` com valor inicial](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado-tarefas.md#6-criar-estado-para-o-componente-apptarefaeditar-com-valor-inicial)
 7. [Criar estado para o componente `AppTarefaLista` com valor inicial](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/07-elevacao_de_estado-tarefas.md#7-criar-estado-para-o-componente-apptarefalista-com-valor-inicial)
-8. continuará
+8. Elevar o estado do componente `AppTarefaLista` para `App`
+9. Elevar o estado do componente `AppTarefaEditar` para `App`
+10. Criar função para adicionar novas tarefas
 
 ### 1. Criar o projeto e limpar o código
 1. Abrir o terninal de comandos
@@ -436,9 +438,7 @@ const AppTarefaEditar = () => {
 			<input
 				type="text"
 				value={tarefa}
-				onChange={(e: React.FormEvent<HTMLInputElement>) =>
-					setTarefa(e.target.value)
-				}
+				onChange={(e: any) => setTarefa(e.target.value)}
 			/>
 			<button>Adicionar</button>
 		</div>
@@ -449,8 +449,8 @@ const AppTarefaLista = (props: any) => {
 	return (
 		<div className="card">
 			<ul>
-				{props.data.map((item, index) => (
-					<li key={index}>{item}</li>
+				{props.data.map((item: string, indice: number) => (
+					<li key={indice}>{item}</li>
 				))}
 			</ul>
 		</div>
@@ -467,7 +467,7 @@ const App = () => {
 		"Elevar os estados dos componentes quando tiver dados compartilhados",
 		"Programar a modificação dos estados",
 	]);
-	
+
 	return (
 		<>
 			<AppNavBar />
@@ -478,87 +478,153 @@ const App = () => {
 };
 
 export default App;
+
 ```
 
 ### 9. Elevar o estado do componente `AppTarefaEditar` para `App`
-1. Copiar o estado do componente `AppTarefaEditar` para `App`;
-2. 
+1. Copiar a função anônima de `onChange` para uma constante `tratarMudanca`;
+2. Copiar o estado `tarefa` do componente `AppTarefaEditar` para `App`;
+3. Copiar a constante `tratarMudanca` do componente `AppTarefaEditar` para `App` como `tratarMudancaTexto`;
+4. Adicionar o parâmetro `props: any` ao componente `AppTarefaEditar`;
+5. Adicionar a propriedade `valor={tarefa}` e `mudar={tratarMudancaTexto}` na instância `AppTarefaLista` em `App`
+6. Substituir no componente `AppTarefaEditar` de `value={tarefa}` por `value={props.valor}`;
+7. Substituir no componente `AppTarefaEditar` de `onChange={tratarMudanca}` por `onChange={props.mudar}`;
+8. Apagar o estado local `tarefa` e a função `tratarMudanca` do componente `AppTarefaEditar`.
 
 ```javascript
 import { useState } from "react";
 import "./App.css";
 
 const AppNavBar = () => {
-  return (
-    <div className="card">
-      <h1>Lista de tarefas</h1>
-    </div>
-  );
+	return (
+		<div className="card">
+			<h1>Lista de tarefas</h1>
+		</div>
+	);
 };
 
 const AppTarefaEditar = (props: any) => {
-
-  return (
-    <div className="card">
-      <label>Tarefa: </label>
-      <input type="text" value={props.valor} onChange={props.mudar} />
-      <button onClick={props.adicionar}>Adicionar</button>
-    </div>
-  );
-}
+	return (
+		<div className="card">
+			<label>Tarefa: </label>
+			<input type="text" value={props.valor} onChange={props.mudar} />
+			<button>Adicionar</button>
+		</div>
+	);
+};
 
 const AppTarefaLista = (props: any) => {
-
-  return (
-    <div className="card">
-      <ul>
-        {props.data.map(
-          (item, indice) =>
-            <li key={indice}>{item}</li>
-        )}
-      </ul>
-    </div>
-  )
-}
-
+	return (
+		<div className="card">
+			<ul>
+				{props.data.map((item: string, indice: number) => (
+					<li key={indice}>{item}</li>
+				))}
+			</ul>
+		</div>
+	);
+};
 
 const App = () => {
-  const [tarefa, setTarefa] = useState("");
-  const tratarMudancaTexto = (e:any) => setTarefa(e.target.value);
-  const [tarefas, setTarefas] = useState([
-    "Prototipar interface do usuário",
-    "Implementar com HTML a interface com o usário em React",
-    "Extrair componentes React da implementação HTML",
-    "Transferir os dados do HTML dos componentes React para variáveis",
-    "Modificar os dados de variáveis para estado ou propriedades de componentes",
-    "Elevar os estados dos componentes quando tiver dados compartilhados",
-    "Programar a modificação dos estados",
-  ]);
+	const [tarefa, setTarefa] = useState("");
+	const tratarMudancaTexto = (e: any) => setTarefa(e.target.value);
+	const [tarefas, setTarefas] = useState([
+		"Prototipar interface do usuário",
+		"Implementar com HTML a interface com o usário em React",
+		"Extrair componentes React da implementação HTML",
+		"Transferir os dados do HTML dos componentes React para variáveis",
+		"Modificar os dados de variáveis para estado ou propriedades de componentes",
+		"Elevar os estados dos componentes quando tiver dados compartilhados",
+		"Programar a modificação dos estados",
+	]);
 
-  const tarefaAdicionar = () => {
-    const lista = tarefas;
-    lista.push(tarefa);
-    setTarefas(lista);
-    setTarefa("");
-    console.info(tarefas);
-  }
-
-  return (
-    <>
-      <AppNavBar />
-      <AppTarefaEditar 
-        valor={tarefa} 
-        mudar={tratarMudancaTexto} 
-        adicionar={tarefaAdicionar} />
-      <AppTarefaLista data={tarefas} />
-    </>
-  );
+	return (
+		<>
+			<AppNavBar />
+			<AppTarefaEditar
+				valor={tarefa}
+				mudar={tratarMudancaTexto}
+			/>
+			<AppTarefaLista data={tarefas} />
+		</>
+	);
 };
 
 export default App;
 
 ```
 
+### 10. Criar função para adicionar novas tarefas
+
+```javascript
+import { useState } from "react";
+import "./App.css";
+
+const AppNavBar = () => {
+	return (
+		<div className="card">
+			<h1>Lista de tarefas</h1>
+		</div>
+	);
+};
+
+const AppTarefaEditar = (props: any) => {
+	return (
+		<div className="card">
+			<label>Tarefa: </label>
+			<input type="text" value={props.valor} onChange={props.mudar} />
+			<button onClick={props.adicionar}>Adicionar</button>
+		</div>
+	);
+};
+
+const AppTarefaLista = (props: any) => {
+	return (
+		<div className="card">
+			<ul>
+				{props.data.map((item: string, indice: number) => (
+					<li key={indice}>{item}</li>
+				))}
+			</ul>
+		</div>
+	);
+};
+
+const App = () => {
+	const [tarefa, setTarefa] = useState("");
+	const tratarMudancaTexto = (e: any) => setTarefa(e.target.value);
+	const [tarefas, setTarefas] = useState([
+		"Prototipar interface do usuário",
+		"Implementar com HTML a interface com o usário em React",
+		"Extrair componentes React da implementação HTML",
+		"Transferir os dados do HTML dos componentes React para variáveis",
+		"Modificar os dados de variáveis para estado ou propriedades de componentes",
+		"Elevar os estados dos componentes quando tiver dados compartilhados",
+		"Programar a modificação dos estados",
+	]);
+	const tarefaAdicionar = () => {
+		const lista = tarefas;
+		lista.push(tarefa);
+		setTarefas(lista);
+		setTarefa("");
+	};
+
+	return (
+		<>
+			<AppNavBar />
+			<AppTarefaEditar
+				valor={tarefa}
+				mudar={tratarMudancaTexto}
+				adicionar={tarefaAdicionar}
+			/>
+			<AppTarefaLista data={tarefas} />
+		</>
+	);
+};
+
+export default App;
+
+```
 
 ## Links
 - React
