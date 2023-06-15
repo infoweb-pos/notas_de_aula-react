@@ -72,7 +72,7 @@ found 0 vulnerabilities
 ```javascript
 import './App.css'
 
-function App() {
+const App = () => {
 
   return (
     <>
