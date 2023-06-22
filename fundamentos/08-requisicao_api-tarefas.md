@@ -39,16 +39,16 @@ Scaffolding project in /home/minora/minora/2023-pos/08-01-requisicao_api-tarefas
 
 Done. Now run:
 
-  cd 07-02-elevacao_de_estado-tarefas
+  cd 08-01-requisicao_api-tarefas
   npm install
   npm run dev
 
 $ cd 08-01-requisicao_api-tarefas
 
 [08-01-requisicao_api-tarefas] $ npm install axios
-added 209 packages, and audited 210 packages in 15s
+added 218 packages, and audited 219 packages in 33s
 
-39 packages are looking for funding
+40 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
@@ -64,17 +64,13 @@ found 0 vulnerabilities
 
 **arquivo** `src/App.tsx`
 ```javascript
-import './App.css'
+import "./App.css";
 
 const App = () => {
+	return <></>;
+};
 
-  return (
-    <>
-    </>
-  )
-}
-
-export default App
+export default App;
 
 ```
 
@@ -108,11 +104,115 @@ export default App;
 ```
 
 ### 3. Criar o componente `AppTarefas` com uma lista de tarefas e adicionar instância em `App`
+1. Criar uma constante para o componente `AppNavBar`
+2. Adicionar um botão e uma lista com as tarefas em `AppNavBar`
+3. Adicioanar uma instância do componente `AppNavBar` em `App`
+
+```javascript
+import "./App.css";
+
+const AppNavBar = () => {
+	return (
+		<div className="card">
+			<h1>Lista de tarefas (apenas leitura)</h1>
+		</div>
+	);
+};
+
+const AppTarefas = () => {
+	return (
+		<div className="card">
+			<button>Pegar tarefas</button>
+			<ul>
+				<li>
+					Criar o projeto, adicionar bibliotecas e limpar o código
+				</li>
+				<li>
+					Criar o componente AppNavBar com o título da aplicação e
+					adicionar instância em App
+				</li>
+				<li>
+					Criar o componente AppTarefas com uma lista de tarefas e
+					adicionar instância em App
+				</li>
+				<li>
+					Transferir dados da lista para estado tarefas de AppTarefas
+				</li>
+				<li>
+					Montas o estado tarefas do componente AppTarefas a partir de
+					requisião a API
+				</li>
+			</ul>
+		</div>
+	);
+};
+
+const App = () => {
+	return (
+		<>
+			<AppNavBar />
+			<AppTarefas />
+		</>
+	);
+};
+
+export default App;
+
+```
 
 ### 4. Transferir dados da lista para estado `tarefas` de `AppTarefas`
 
+```javascript
+import { useState } from "react";
+import "./App.css";
+
+const AppNavBar = () => {
+	return (
+		<div className="card">
+			<h1>Lista de tarefas (apenas leitura)</h1>
+		</div>
+	);
+};
+
+const AppTarefas = () => {
+	const [tarefas, setTarefas] = useState([
+		"Criar o projeto, adicionar bibliotecas e limpar o código",
+		"Criar o componente AppNavBar com o título da aplicação e adicionar instância em App",
+		"Criar o componente AppTarefas com uma lista de tarefas e adicionar instância em App",
+		"Transferir dados da lista para estado tarefas de AppTarefas",
+		"Montas o estado tarefas do componente AppTarefas a partir de requisião a API",
+	]);
+
+	return (
+		<div className="card">
+			<button>Pegar tarefas</button>
+			<ul>
+				{tarefas.map((tarefa: string, indice: number) => (
+					<li key={indice}>{tarefa}</li>
+				))}
+			</ul>
+		</div>
+	);
+};
+
+const App = () => {
+	return (
+		<>
+			<AppNavBar />
+			<AppTarefas />
+		</>
+	);
+};
+
+export default App;
+
+```
+
 ### 5. Montas o estado `tarefas` do componente `AppTarefas` a partir de requisião a API
 
+```javascript
+
+```
 
 
 ## Linnks
