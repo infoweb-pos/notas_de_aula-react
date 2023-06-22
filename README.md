@@ -15,4 +15,6 @@
    5. Passar uma função para ser executada em um componente react
    6. Adicionar um estado a um componente react
    7. Compartilhando estado entre componentes com _elevação de estado_ (lifiting state): [aplicação de contadores](fundamentos/07-elevacao_de_estado-contador.md) e [aplicação de tarefas](fundamentos/07-elevacao_de_estado-tarefas.md)
+   8. Requisições a API
+   9. Efeitos colaterais
 6. Colocando estilos
