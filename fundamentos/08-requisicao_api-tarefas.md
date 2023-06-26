@@ -209,8 +209,65 @@ export default App;
 ```
 
 ### 5. Montas o estado `tarefas` do componente `AppTarefas` a partir de requisião a API
+1. Criar a função de seta (_arrow function_) `tratarClique` com um "alô mundo" no log em `AppTarefas`.
+2. Adicionar o evento `onClick={tratarClique}` no `button` em `AppTarefas`.
+3. Importar e configurar o `axios` para acessar a URL https://infoweb-api.vercel.app/.
+4. Colocar o "alô mundo" dentro da chamada `axios.get().then()`.
+5. Substituir o "Alô mundo" pela resposta da chamada ao GET `console.info(response.data);`.
+6. Criar uma nova lista mapeando apenas os títulos das tarefas recebidas em `response.data.data`.
+7. Atribuir a nova lista ao estado `tarefas`, `setTarefas(lista)`.
+8. Colocar valor inicial do estado `tarefas` com `[]`.
 
 ```javascript
+import { useState } from "react";
+import "./App.css";
+import axios from "axios";
+
+const api = axios.create({
+	baseURL: "https://infoweb-api.vercel.app/",
+});
+
+const AppNavBar = () => {
+	return (
+		<div className="card">
+			<h1>Lista de tarefas (apenas leitura)</h1>
+		</div>
+	);
+};
+
+const AppTarefas = () => {
+	const [tarefas, setTarefas] = useState([]);
+
+	const tratarClique = () => {
+		api.get("tarefas").then((response) => {
+			console.info(response.data);
+			const lista = response.data.data.map((item: any) =>  item.titulo);
+			console.info(lista);
+			setTarefas(lista);
+		});
+	};
+	return (
+		<div className="card">
+			<button onClick={tratarClique}>Pegar tarefas</button>
+			<ul>
+				{tarefas.map((tarefa: string, indice: number) => (
+					<li key={indice}>{tarefa}</li>
+				))}
+			</ul>
+		</div>
+	);
+};
+
+const App = () => {
+	return (
+		<>
+			<AppNavBar />
+			<AppTarefas />
+		</>
+	);
+};
+
+export default App;
 
 ```
 
