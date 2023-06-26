@@ -161,6 +161,9 @@ export default App;
 ```
 
 ### 4. Transferir dados da lista para estado `tarefas` de `AppTarefas`
+1. Criar o estado `tarefas` em `AppTarefas` com valor inicial `[]`.
+2. Para cada `li` copiar e colar como string no valor inicial do estado `tarefas`.
+3. Substituir os `li` com valores estáticos por mapa gerada a partir do estado `tarefas`.
 
 ```javascript
 import { useState } from "react";
