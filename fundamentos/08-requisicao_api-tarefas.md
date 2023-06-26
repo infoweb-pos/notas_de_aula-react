@@ -14,11 +14,11 @@ e AppTarefas, com um botão e uma lista de tarefas.
 O botão de AppTarefas será o responsável por atualizar a lista de tarefas a partir de requisição a API.
 
 ## Sumário
-1. Criar o projeto, adicionar bibliotecas e limpar o código
-2. Criar o componente `AppNavBar` com o título da aplicação e adicionar instância em `App`
-3. Criar o componente `AppTarefas` com uma lista de tarefas e adicionar instância em `App`
-4. Transferir dados da lista para estado `tarefas` de `AppTarefas`
-5. Montas o estado `tarefas` do componente `AppTarefas` a partir de requisião a API
+1. [Criar o projeto, adicionar bibliotecas e limpar o código](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-tarefas.md#1-criar-o-projeto-adicionar-bibliotecas-e-limpar-o-c%C3%B3digo)
+2. [Criar o componente `AppNavBar` com o título da aplicação e adicionar instância em `App`](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-tarefas.md#2-criar-o-componente-appnavbar-com-o-t%C3%ADtulo-da-aplica%C3%A7%C3%A3o-e-adicionar-inst%C3%A2ncia-em-app)
+3. [Criar o componente `AppTarefas` com uma lista de tarefas e adicionar instância em `App`](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-tarefas.md#3-criar-o-componente-apptarefas-com-uma-lista-de-tarefas-e-adicionar-inst%C3%A2ncia-em-app)
+4. [Transferir dados da lista para estado `tarefas` de `AppTarefas`](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-tarefas.md#4-transferir-dados-da-lista-para-estado-tarefas-de-apptarefas)
+5. [Montas o estado `tarefas` do componente `AppTarefas` a partir de requisião a API](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-tarefas.md#5-montas-o-estado-tarefas-do-componente-apptarefas-a-partir-de-requisi%C3%A3o-a-api)
 
 ### 1. Criar o projeto, adicionar bibliotecas e limpar o código
 1. Abrir o terninal de comandos
