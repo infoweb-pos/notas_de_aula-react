@@ -1,7 +1,7 @@
 # Usando dados a partir de requisições a API
 - **Tema**: Fundamentos de React
 - **Subtema**: Fundamentos - Requisições a API
-- **código-fonte**: [github](https://github.com/infoweb-pos/08-01-requisicao_api-tarefas.git) zip
+- **código-fonte**: [github](https://github.com/infoweb-pos/08-01-requisicao_api-tarefas.git) [zip](https://github.com/infoweb-pos/08-01-requisicao_api-tarefas/archive/refs/tags/2023.zip)
 
 ## Objetivos
 - Montar dados da interface a partir de dados recebidos de requisições a API
