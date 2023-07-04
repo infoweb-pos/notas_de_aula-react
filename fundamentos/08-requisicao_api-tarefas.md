@@ -283,3 +283,8 @@ export default App;
   - [Guia inicial do axios js](https://axios-http.com/ptbr/docs/intro)
 - Vídeos tutoriais
   - [React, Material UI 5 e Typescript: #20 - Como configurar o axios no React](https://youtu.be/t0RjS2aNgus)
+- API Fake
+  - [Dummy JSON](https://dummyjson.com/)
+  - [Fake Store API](https://fakestoreapi.com/)
+  - [JSON Placeholder](https://jsonplaceholder.typicode.com/)
+  - [Random User Generator](https://randomuser.me/)
