@@ -17,7 +17,11 @@
    7. Compartilhando estado entre componentes com _elevação de estado_ (lifiting state): [aplicação de contadores](fundamentos/07-elevacao_de_estado-contador.md) e [aplicação de tarefas](fundamentos/07-elevacao_de_estado-tarefas.md)
    8. Usando dados a partir de requisições a API
       1. [Tarefas com método GET](fundamentos/08-requisicao_api-tarefas.md)
-      2. Tarefas com métodos GET, POST, PUT e DELETE
+      2. Acesso ao Dummy Json
+         1. [Criar a página de lista de usuários](fundamentos/08-requisicao_api-dummy-usuarios.md)
+         2. [Criar a página de lista de tarefas](fundamentos/08-requisicao_api-dummy-tarefas.md)
+         3. [Criar a página de nova tarefa](fundamentos/08-requisicao_api-dummy-post.md)
+         4. [Criar a página de Login](fundamentos/08-requisicao_api-dummy-login.md)
    9. Efeitos colaterais
    10. Contexto
    11. Páginas e rotas
