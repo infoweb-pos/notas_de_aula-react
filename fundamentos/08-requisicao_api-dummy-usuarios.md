@@ -107,7 +107,7 @@ export default App;
 
 ```
 
-### 4. Transferir dados da lista para estado `usuarios` de `AppUsuarios
+### 4. Transferir dados da lista para estado `usuarios` de `AppUsuarios`
 1. 
 
 ```javascript
