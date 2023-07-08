@@ -1,7 +1,7 @@
 # DummyAPI - Usando dados de lista de tarefas a partir de requisições a API
 - **Tema**: Fundamentos de React
 - **Subtema**: Fundamentos - Requisições a API
-- **código-fonte**: [github]() [zip]()
+- **código-fonte**: [github](https://github.com/infoweb-pos/2023-webapp-08-pratica_de_lab-dummy-01/tree/tarefas) [zip]()
 
 ## Objetivos
 - Adicionar uma página web a partir de lista de tarefas recebidos de requisições a API DummyJson
@@ -14,9 +14,9 @@
 3. [Importar e usar `PaginaComponente` em `App`](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas.md#3-importar-e-usar-paginacomponente-em-app)
 4. [Montar o html de 1 tarefa na página `PaginaTarefas`](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas.md#4-montar-o-html-de-1-tarefa-na-p%C3%A1gina-paginatarefas)
 5. [Criar um componente interno `TarefaItem`](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas.md#5-criar-um-componente-interno-tarefaitem)
-6. [Mudar de constante `tarefa` para estado `tarefas`]()
-7. [Mudar de 1 tarefa para mapa da lista de tarefas do estado `tarefas`]()
-8. [Inicializar estado com requisição a API DummyJson]()
+6. [Mudar de constante `tarefa` para estado `tarefas`](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas.md#6-mudar-de-constante-tarefa-para-estado-tarefas)
+7. [Mudar de 1 tarefa para mapa da lista de tarefas do estado `tarefas`](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas.md#7-mudar-de-1-tarefa-para-mapa-da-lista-de-tarefas-do-estado-tarefas)
+8. [Inicializar estado com requisição a API DummyJson](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas.md#8-inicializar-estado-com-requisi%C3%A7%C3%A3o-a-api-dummyjson)
 
 ### 1. Pegar projeto inicial
 **Fork**
