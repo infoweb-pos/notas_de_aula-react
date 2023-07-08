@@ -12,10 +12,11 @@
 1. [Pegar projeto inicial](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas.md#1-pegar-projeto-inicial)
 2. [Criar a página `src/paginas/PaginaTarefas.tsx` com o componente `PaginaTarefas`](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas.md#2-criar-a-p%C3%A1gina-srcpaginaspaginatarefastsx-com-o-componente-paginatarefas)
 3. [Importar e usar `PaginaComponente` em `App`](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas.md#3-importar-e-usar-paginacomponente-em-app)
-4. [Montar o html de 1 tarefa na página `PaginaTarefas`]()
-5. [Criar um componente interno `TarefaItem`]()
-6. []()
-7. []()
+4. [Montar o html de 1 tarefa na página `PaginaTarefas`](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas.md#4-montar-o-html-de-1-tarefa-na-p%C3%A1gina-paginatarefas)
+5. [Criar um componente interno `TarefaItem`](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas.md#5-criar-um-componente-interno-tarefaitem)
+6. [Mudar de constante `tarefa` para estado `tarefas`]()
+7. [Mudar de 1 tarefa para mapa da lista de tarefas do estado `tarefas`]()
+8. [Inicializar estado com requisição a API DummyJson]()
 
 ### 1. Pegar projeto inicial
 **Fork**
@@ -168,19 +169,135 @@ export default PaginaTarefas;
 
 ```
 
-### 6. 
-1. 
+### 6. Mudar de constante `tarefa` para estado `tarefas`
+1. Ainda editando o arquivo `src/pagina/PaginaTarefas.tsx`.
+2. Criar o estado `tarefas` e inicializar com uma lista vazia.
+3. Copiar o valor de `tarefa` como o item 1 do estado `tarefas` no valor inicial.
+4. No JSX de `PaginaTarefa`, onde tiver `tarefa` modificar para `tarefas[0]`.
+5. Apagar a constante `tarefa`.
 
+**arquivo** `src/pagina/PaginaTarefas.tsx`
+```javascript
+import { useState } from "react";
+
+interface propsTarefa {
+	id: number;
+	titulo: string;
+	feito: boolean;
+}
+
+const TarefaItem = (props: propsTarefa) => {
+	return (
+		<div className="card">
+			<label>
+				<input
+					type="checkbox"
+					name={`${props.id}`}
+					checked={props.feito}
+				/>
+				{props.titulo}
+			</label>
+		</div>
+	);
+};
+
+const PaginaTarefas = () => {
+	const [tarefas] = useState([
+		{
+			id: 1,
+			todo: "codificar requisições a api dummy json",
+			completed: false,
+			userId: 1,
+		},
+	]);
+
+	return (
+		<div className="card">
+			<h2>Lista de tarefas</h2>
+			<TarefaItem
+				id={tarefas[0].id}
+				titulo={tarefas[0].todo}
+				feito={tarefas[0].completed}
+			/>
+		</div>
+	);
+};
+
+export default PaginaTarefas;
+
+```
+
+### 7. Mudar de 1 tarefa para mapa da lista de tarefas do estado `tarefas`
+1. Ainda editando o arquivo `src/pagina/PaginaTarefas.tsx`.
+2. No JSX de `PaginaTarefas`, acima de `<TarefaItem ...`, inserir `{tarefas.map(tarefa => )}`.
+3. Mover o código de `<TarefaItem...` para dentro do mapenamento `{tarefas.map(tarefa => )}`.
+4. Soliciar ao VSCode para formatar o arquivo.
+5. Em `<TarefaItem...`, substituir `tarefas[0]` por `tarefa`.
+6. Em `<TarefaItem...`, por ser uma lista, adicionar a propriedade `key={tarefa.id}`.
+
+**arquivo** `src/pagina/PaginaTarefas.tsx`
+```javascript
+import { useState } from "react";
+
+interface propsTarefa {
+	id: number;
+	titulo: string;
+	feito: boolean;
+}
+
+const TarefaItem = (props: propsTarefa) => {
+	return (
+		<div className="card">
+			<label>
+				<input
+					type="checkbox"
+					name={`${props.id}`}
+					checked={props.feito}
+				/>
+				{props.titulo}
+			</label>
+		</div>
+	);
+};
+
+const PaginaTarefas = () => {
+	const [tarefas] = useState([
+		{
+			id: 1,
+			todo: "codificar requisições a api dummy json",
+			completed: false,
+			userId: 1,
+		},
+	]);
+
+	return (
+		<div className="card">
+			<h2>Lista de tarefas</h2>
+			{tarefas.map((tarefa) => (
+				<TarefaItem
+					key={tarefa.id}
+					id={tarefa.id}
+					titulo={tarefa.todo}
+					feito={tarefa.completed}
+				/>
+			))}
+		</div>
+	);
+};
+
+export default PaginaTarefas;
+
+```
+
+### 8. Inicializar estado com requisição a API DummyJson
+1. Ainda editando o arquivo `src/pagina/PaginaTarefas.tsx`.
+2. 
+
+**arquivo** `src/pagina/PaginaTarefas.tsx`
 ```javascript
 
 ```
 
-### 7. 
-1. 
-
-```javascript
-
-```
 
 ## Linnks
 - [Dummy JSON](https://dummyjson.com/)
