@@ -9,13 +9,13 @@
 ## Resumo
 
 ## Sumário
-1. [Pegar projeto inicial]()
-2. [Criar a página `src/paginas/PaginaTarefas.tsx` com o componente `PaginaTarefas`]()
-3. [Importar e usar `PaginaComponente` em `App`]()
-4. []()
-5. []()
-6. [Criar arquivo o arquivo `PaginaUsuarios.tsx` em `src/paginas` e copiar o componente `AppUsuarios`]()
-7. [Usar o componente do arquivo `src/paginas/PaginaUsuarios.tsx` em `App`]()
+1. [Pegar projeto inicial](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas.md#1-pegar-projeto-inicial)
+2. [Criar a página `src/paginas/PaginaTarefas.tsx` com o componente `PaginaTarefas`](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas.md#2-criar-a-p%C3%A1gina-srcpaginaspaginatarefastsx-com-o-componente-paginatarefas)
+3. [Importar e usar `PaginaComponente` em `App`](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas.md#3-importar-e-usar-paginacomponente-em-app)
+4. [Montar o html de 1 tarefa na página `PaginaTarefas`]()
+5. [Criar um componente interno `TarefaItem`]()
+6. []()
+7. []()
 
 ### 1. Pegar projeto inicial
 **Fork**
@@ -75,17 +75,96 @@ export default App
 
 ```
 
-### 4. 
-1. 
+### 4. Montar o html de 1 tarefa na página `PaginaTarefas`
+1. Abrir o arquivo `src/pagina/PaginaTarefas.tsx`.
+2. Criar uma constante `tarefa` com um objeto _json_.
+3. Criar um html do tipo checkbox para a constante `tarefa`.
 
+**arquivo** `src/pagina/PaginaTarefas.tsx`
 ```javascript
+const PaginaTarefas = () => {
+	const tarefa = {
+		id: 1,
+		todo: "codificar requisições a api dummy json",
+		completed: false,
+		userId: 1,
+	};
+
+	return (
+		<div className="card">
+			<h2>Lista de tarefas</h2>
+			<div className="card">
+				<label>
+					<input
+						type="checkbox"
+						name={`${tarefa.id}`}
+						checked={tarefa.completed}
+					/>
+					{tarefa.todo}
+				</label>
+			</div>
+		</div>
+	);
+};
+
+export default PaginaTarefas;
 
 ```
 
-### 5. 
-1. 
+### 5. Criar um componente interno `TarefaItem`
+1. Ainda editando o arquivo `src/pagina/PaginaTarefas.tsx`.
+3. Criar o componente interno `TarefaItem`.
+4. Criar a interface `propsTarefa` e tipar o `props` do componente `TarefaItem`.
+5. Copiar o html de tarefa do JSX da `PaginaTarefa` para `TarefaItem`.
+6. Substituir no JSX de `TarefaItem` de `tarefa.id` por `props.id`.
+7. Substituir no JSX de `TarefaItem` de `tarefa.todo` por `props.titulo`.
+8. Substituir no JSX de `TarefaItem` de `tarefa.completed` por `props.feito`.
+9. Substituir no JSX de `PaginaTarefa` os códigos html pelo componente `TarefaItem`.
 
+**arquivo** `src/pagina/PaginaTarefas.tsx`
 ```javascript
+interface propsTarefa {
+	id: number;
+	titulo: string;
+	feito: boolean;
+}
+
+const TarefaItem = (props: propsTarefa) => {
+	return (
+		<div className="card">
+			<label>
+				<input
+					type="checkbox"
+					name={`${props.id}`}
+					checked={props.feito}
+				/>
+				{props.titulo}
+			</label>
+		</div>
+	);
+};
+
+const PaginaTarefas = () => {
+	const tarefa = {
+		id: 1,
+		todo: "codificar requisições a api dummy json",
+		completed: false,
+		userId: 1,
+	};
+
+	return (
+		<div className="card">
+			<h2>Lista de tarefas</h2>
+			<TarefaItem
+				id={tarefa.id}
+				titulo={tarefa.todo}
+				feito={tarefa.completed}
+			/>
+		</div>
+	);
+};
+
+export default PaginaTarefas;
 
 ```
 
