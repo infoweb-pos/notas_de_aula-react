@@ -291,10 +291,82 @@ export default PaginaTarefas;
 
 ### 8. Inicializar estado com requisição a API DummyJson
 1. Ainda editando o arquivo `src/pagina/PaginaTarefas.tsx`.
-2. 
+2. Colocar o valor `[]` no valor inicial do estado `tarefas`.
+3. Colocar o método `setTarefas` para modificar valor do estado `tarefas`.
+4. Vai reclamar do tipo em `tarefas.map`, criar nova _interface_ `jsonTarefa` conforme _json_ resultado da API.
+5. Importar o `axios` e criar uma instância `api` com `axios.create`. Lembrar de colocar `baseUrl`.
+6. Criar o código para inicializar o estado `tarefas`.
+7. Apesar de funcionar, o VS Code reclama o tipo da chamada `get` esta sem tipo. Crie uma nova interface `jsonDeRespostaDoGet` e tipe a chamada `get`.
 
 **arquivo** `src/pagina/PaginaTarefas.tsx`
 ```javascript
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+const api = axios.create({
+	baseURL: "https://dummyjson.com/",
+});
+
+interface propsTarefa {
+	id: number;
+	titulo: string;
+	feito: boolean;
+}
+
+interface jsonTarefa {
+	id: number;
+	todo: string;
+	completed: boolean;
+	userId: number;
+}
+
+interface jsonDeRespostaDoGet {
+	todos: [];
+	total: number;
+	skip: number;
+	limit: number;
+}
+
+const TarefaItem = (props: propsTarefa) => {
+	return (
+		<div className="card">
+			<label>
+				<input
+					type="checkbox"
+					name={`${props.id}`}
+					checked={props.feito}
+				/>
+				{props.titulo}
+			</label>
+		</div>
+	);
+};
+
+const PaginaTarefas = () => {
+	const [tarefas, setTarefas] = useState([]);
+
+	useEffect(() => {
+		api.get<jsonDeRespostaDoGet>("/todos?limit=10").then((resposta) =>
+			setTarefas(resposta.data.todos)
+		).catch((erro: any) => console.error(erro));
+	}, []);
+
+	return (
+		<div className="card">
+			<h2>Lista de tarefas</h2>
+			{tarefas.map((tarefa: jsonTarefa) => (
+				<TarefaItem
+					key={tarefa.id}
+					id={tarefa.id}
+					titulo={tarefa.todo}
+					feito={tarefa.completed}
+				/>
+			))}
+		</div>
+	);
+};
+
+export default PaginaTarefas;
 
 ```
 
