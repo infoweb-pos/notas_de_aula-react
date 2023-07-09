@@ -10,8 +10,8 @@
 A partir do projeto iniciado no github, e registrado no releasse, montar uma 2a página com a lista de tarefas.
 
 ## Sumário
-1. [Pegar projeto inicial]()
-2. [Criar a página `src/paginas/PaginaTarefasNova.tsx` com o componente `PaginaTarefasNova`]()
+1. [Pegar projeto inicial](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas-post.md#1-pegar-projeto-inicial)
+2. [Criar a página `src/paginas/PaginaTarefasNova.tsx` com o componente `PaginaTarefasNova`](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas-post.md#2-criar-a-p%C3%A1gina-srcpaginaspaginatarefasnovatsx-com-o-componente-paginatarefasnova)
 3. []()
 
 
