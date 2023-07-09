@@ -20,7 +20,7 @@
       2. Acesso ao Dummy Json
          1. [Criar a página de lista de usuários](fundamentos/08-requisicao_api-dummy-usuarios.md)
          2. [Criar a página de lista de tarefas](fundamentos/08-requisicao_api-dummy-tarefas.md)
-         3. [Criar a página de nova tarefa](fundamentos/08-requisicao_api-dummy-post.md)
+         3. [Criar a página de nova tarefa](fundamentos/08-requisicao_api-dummy-tarefas-post.md)
          4. [Criar a página de Login](fundamentos/08-requisicao_api-dummy-login.md)
    9. Efeitos colaterais
    10. Contexto
