@@ -7,6 +7,7 @@
 - Adicionar uma página web a partir de lista de tarefas recebidos de requisições a API DummyJson
 
 ## Resumo
+A partir do projeto iniciado no github, e registrado no releasse, montar uma 2a página com a lista de tarefas.
 
 ## Sumário
 1. [Pegar projeto inicial](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas.md#1-pegar-projeto-inicial)
