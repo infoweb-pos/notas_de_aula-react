@@ -1,7 +1,7 @@
 # DummyAPI - Usando dados de lista de tarefas a partir de requisições a API
 - **Tema**: Fundamentos de React
 - **Subtema**: Fundamentos - Requisições a API
-- **código-fonte**: [github](https://github.com/infoweb-pos/2023-webapp-08-pratica_de_lab-dummy-01/tree/tarefas) [zip]()
+- **código-fonte**: [github](https://github.com/infoweb-pos/2023-webapp-08-pratica_de_lab-dummy-01/tree/tarefas) [zip](https://github.com/infoweb-pos/2023-webapp-08-pratica_de_lab-dummy-01/archive/refs/tags/pagina-tarefas.zip)
 
 ## Objetivos
 - Adicionar uma página web a partir de lista de tarefas recebidos de requisições a API DummyJson
