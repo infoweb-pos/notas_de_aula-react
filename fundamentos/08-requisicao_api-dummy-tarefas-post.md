@@ -1,13 +1,13 @@
 # DummyAPI - Criando novas tarefas na API
 - **Tema**: Fundamentos de React
 - **Subtema**: Fundamentos - Requisições a API
-- **código-fonte**: [github]() [zip]()
+- **código-fonte**: [github](https://github.com/infoweb-pos/2023-webapp-08-pratica_de_lab-dummy-01/tree/tarefas) [zip](https://github.com/infoweb-pos/2023-webapp-08-pratica_de_lab-dummy-01/archive/refs/tags/pagina-tarefa-nova.zip)
 
 ## Objetivos
 - Adicionar uma página web a partir de lista de tarefas recebidos de requisições a API DummyJson
 
 ## Resumo
-A partir do projeto iniciado no github, e registrado no releasse, montar uma página para criar novas de tarefas.
+A partir do projeto iniciado no github, e [registrado no releasse](https://github.com/infoweb-pos/2023-webapp-08-pratica_de_lab-dummy-01/archive/refs/tags/pagina-tarefa-nova.zip), montar uma página para criar novas de tarefas.
 
 ## Sumário
 1. [Pegar projeto inicial](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas-post.md#1-pegar-projeto-inicial)
@@ -16,19 +16,11 @@ A partir do projeto iniciado no github, e registrado no releasse, montar uma pá
 4. [Montar página com texto para criar nova tarefa](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas-post.md#4-montar-p%C3%A1gina-com-texto-para-criar-nova-tarefa)
 5. [Criar estado com texto e conectar ao html da página](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas-post.md#5-criar-estado-com-texto-e-conectar-ao-html-da-p%C3%A1gina)
 6. [Criar uma função para o evento onClick que construa o objeto json](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas-post.md#6-criar-uma-fun%C3%A7%C3%A3o-para-o-evento-onclick-que-construa-o-objeto-json)
-7. [Enviar json para criar uma nova tarefa na API]()
+7. [Enviar json para criar uma nova tarefa na API](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas-post.md#7-enviar-json-para-criar-uma-nova-tarefa-na-api)
 
 
 
 ### 1. Pegar projeto inicial
-**Fork**
-1. Fork do [repositório github](https://github.com/infoweb-pos/2023-webapp-08-pratica_de_lab-dummy-01.git).
-2. Clonar seu repositório remoto para o computador `git clone https://github.com/...`.
-3. Mudar a _banch_ para `tarefas`, `git checkout tarefas`.
-4. Abrir VSCode com a pasta do projeto localmente.
-5. Abrir o terminal no VSCode e executar `npm install`.
-6. Executar no terminal, após a instalação das bibliotecas, `npm run dev`.
-
 **Baixar arquivo zipado**
 1. baixar o [zip](https://github.com/infoweb-pos/2023-webapp-08-pratica_de_lab-dummy-01/archive/refs/tags/pagina-tarefas.zip).
 2. Descompactar o arquivo zip localmente no seu computador
