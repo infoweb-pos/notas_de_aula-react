@@ -200,10 +200,59 @@ export default PaginaTarefasNova;
 
 ### 7. Enviar json para criar uma nova tarefa na API
 1. Ainda no arquivo `src/pagina/PaginaTarefasNova.tsx`.
-2. 
+2. Criar a constante `api` como uma instância de `axios` e com a `baseUrl: 'https://dummyjson.com/'`.
+3. Na função `tratarClique`, montar a requisição `post` para `/todo/add` enviando o objeto json.
+4. Tratar o `then` colocando `tarefa` com um texto vazio.
+5. Para tratar o erro do VS Code, colocar o `catch`.
 
 **arquivo** `src/pagina/PaginaTarefasNova.tsx`
 ```javascript
+import axios from "axios";
+import { useState } from "react";
+
+const api = axios.create({
+	baseURL: "https://dummyjson.com/",
+});
+
+const PaginaTarefasNova = () => {
+	const [tarefa, setTarefa] = useState("");
+	const tratarClique = () => {
+		const json = {
+			todo: tarefa,
+			completed: false,
+			userId: 1,
+		};
+		console.log(json);
+		api.post("/todo/add", json)
+			.then(() => setTarefa(""))
+			.catch((erro) => console.log(erro));
+	};
+
+	return (
+		<div className="card">
+			<h2>Lista de tarefas</h2>
+			<h3>Tarefa nova</h3>
+			<div>
+				<label>
+					Tarefa:&nbsp;
+					<input
+						type="text"
+						value={tarefa}
+						onChange={(evento: React.FormEvent<HTMLInputElement>) =>
+							setTarefa(evento.target.value)
+						}
+					></input>
+				</label>
+				<button onClick={tratarClique} disabled={tarefa === ""}>
+					Criar nova tarefa
+				</button>
+			</div>
+		</div>
+	);
+};
+
+export default PaginaTarefasNova;
+
 ```
 
 
