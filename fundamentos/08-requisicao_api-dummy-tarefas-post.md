@@ -12,10 +12,10 @@ A partir do projeto iniciado no github, e registrado no releasse, montar uma 2a 
 ## Sumário
 1. [Pegar projeto inicial](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas-post.md#1-pegar-projeto-inicial)
 2. [Criar a página `src/paginas/PaginaTarefasNova.tsx` com o componente `PaginaTarefasNova`](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas-post.md#2-criar-a-p%C3%A1gina-srcpaginaspaginatarefasnovatsx-com-o-componente-paginatarefasnova)
-3. [Importar e usar `PaginaTarefasNova` em `App`]()
-4. [Montar página com texto para criar nova tarefa]()
-5. [Criar estado com texto e conectar ao html da página]()
-6. [Criar uma função para o evento onClick que construa o objeto json]()
+3. [Importar e usar `PaginaTarefasNova` em `App`](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas-post.md#3-importar-e-usar-paginatarefasnova-em-app)
+4. [Montar página com texto para criar nova tarefa](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas-post.md#4-montar-p%C3%A1gina-com-texto-para-criar-nova-tarefa)
+5. [Criar estado com texto e conectar ao html da página](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas-post.md#5-criar-estado-com-texto-e-conectar-ao-html-da-p%C3%A1gina)
+6. [Criar uma função para o evento onClick que construa o objeto json](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas-post.md#6-criar-uma-fun%C3%A7%C3%A3o-para-o-evento-onclick-que-construa-o-objeto-json)
 
 
 
