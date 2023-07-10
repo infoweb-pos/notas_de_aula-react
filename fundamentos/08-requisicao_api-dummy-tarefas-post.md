@@ -7,7 +7,7 @@
 - Adicionar uma página web a partir de lista de tarefas recebidos de requisições a API DummyJson
 
 ## Resumo
-A partir do projeto iniciado no github, e registrado no releasse, montar uma 2a página com a lista de tarefas.
+A partir do projeto iniciado no github, e registrado no releasse, montar uma página para criar novas de tarefas.
 
 ## Sumário
 1. [Pegar projeto inicial](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas-post.md#1-pegar-projeto-inicial)
@@ -16,6 +16,7 @@ A partir do projeto iniciado no github, e registrado no releasse, montar uma 2a 
 4. [Montar página com texto para criar nova tarefa](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas-post.md#4-montar-p%C3%A1gina-com-texto-para-criar-nova-tarefa)
 5. [Criar estado com texto e conectar ao html da página](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas-post.md#5-criar-estado-com-texto-e-conectar-ao-html-da-p%C3%A1gina)
 6. [Criar uma função para o evento onClick que construa o objeto json](https://github.com/infoweb-pos/react-notas_de_aula/blob/main/fundamentos/08-requisicao_api-dummy-tarefas-post.md#6-criar-uma-fun%C3%A7%C3%A3o-para-o-evento-onclick-que-construa-o-objeto-json)
+7. [Enviar json para criar uma nova tarefa na API]()
 
 
 
@@ -113,7 +114,7 @@ export default PaginaTarefasNova;
 1. Ainda no arquivo `src/pagina/PaginaTarefasNova.tsx`.
 2. Criar estado `tarefa` e a função `setTarefa` com valor inicial de texto em branco.
 3. Colocar no html `input` a propriedade `value={tarefa}`.
-4. Colocar no html `input` a propriedade `onChange`. Apesar do erro no VS Code, irá funcionar.
+4. Colocar no html `input` a propriedade `onChange` com uma função anônima. Apesar do erro no VS Code, irá funcionar.
 
 **arquivo** `src/pagina/PaginaTarefasNova.tsx`
 ```javascript
@@ -149,11 +150,62 @@ export default PaginaTarefasNova;
 
 ### 6. Criar uma função para o evento onClick que construa o objeto json
 1. Ainda no arquivo `src/pagina/PaginaTarefasNova.tsx`.
+2. Criar uma função de seta `tratarClique` vazia.
+3. Colocar no botão html a propriedade `onClick={tratarClique}`.
+4. Na função `tratarClique`, montar um objeto json.
+5. Mostar o conteúdo do objeto json no `console.log`.
+6. Para evitar enviar tarefa com texto vazio, habilitar o botão apenas quando tiver texto no input. `disabled={tarefa === ""}`
+
+**arquivo** `src/pagina/PaginaTarefasNova.tsx`
+```javascript
+import { useState } from "react";
+
+const PaginaTarefasNova = () => {
+	const [tarefa, setTarefa] = useState("");
+	const tratarClique = () => {
+		const json = {
+			todo: tarefa,
+			completed: false,
+			userId: 1,
+		};
+		console.log(json);
+	};
+
+	return (
+		<div className="card">
+			<h2>Lista de tarefas</h2>
+			<h3>Tarefa nova</h3>
+			<div>
+				<label>
+					Tarefa:&nbsp;
+					<input
+						type="text"
+						value={tarefa}
+						onChange={(evento: React.FormEvent<HTMLInputElement>) =>
+							setTarefa(evento.target.value)
+						}
+					></input>
+				</label>
+				<button onClick={tratarClique} disabled={tarefa === ""}>
+					Criar nova tarefa
+				</button>
+			</div>
+		</div>
+	);
+};
+
+export default PaginaTarefasNova;
+
+```
+
+### 7. Enviar json para criar uma nova tarefa na API
+1. Ainda no arquivo `src/pagina/PaginaTarefasNova.tsx`.
 2. 
 
 **arquivo** `src/pagina/PaginaTarefasNova.tsx`
 ```javascript
 ```
+
 
 
 ## Linnks
