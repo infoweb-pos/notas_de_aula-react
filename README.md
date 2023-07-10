@@ -21,7 +21,9 @@
          1. [Criar a página de lista de usuários](fundamentos/08-requisicao_api-dummy-usuarios.md)
          2. [Criar a página de lista de tarefas](fundamentos/08-requisicao_api-dummy-tarefas.md)
          3. [Criar a página de nova tarefa](fundamentos/08-requisicao_api-dummy-tarefas-post.md)
-         4. [Criar a página de Login](fundamentos/08-requisicao_api-dummy-login.md)
+         4. [Apagar uma tarefa]()
+         5. [Modificar uma tarefa]()
+         6. [Criar a página de Login]()
    9. Efeitos colaterais
    10. Contexto
    11. Páginas e rotas
